@@ -1,0 +1,71 @@
+body {
+    overflow: hidden; 
+}
+
+.w3-container {
+    padding-top: 15%;
+    height: 100%;
+    width: 100%;
+}
+
+.box {
+    opacity: 0.9;
+    background-color: white;
+    padding: 5%;
+    height: auto;
+}
+
+#scroll {
+    overflow-x: scroll;
+    height: 95%;
+}
+
+.spacer {
+    width: 100%;
+    height:100%;
+}
+
+.slide-up {
+    animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+}
+
+.fadein {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.fadeindelay {
+    animation: fadein 4s;
+    -moz-animation: fadein 4s; /* Firefox */
+    -webkit-animation: fadein 4s; /* Safari and Chrome */
+    -o-animation: fadein 4s; /* Opera */
+}
+
+@keyframes fadeindelay {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

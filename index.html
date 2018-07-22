@@ -1,73 +1,80 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>DimitrisTzikas - Personal Site</title>
+        <title>Dimitris Tzikas</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">-->
+        <link rel="stylesheet" media="screen" href="particles/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
-    <body>
-        
-        <!-- Sidebar with image -->
-        <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
-            <div class="bgimg"></div>
-        </nav>
+    <body class="fadein">
 
-        <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-            <!-- Menu icon to close sidebar -->
-            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-                <i class="fa fa-times-circle"></i>
-            </a>
-            <div class="w3-bar-block w3-center">
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-                <a href="#" class="we-bar-itme w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Notes</a>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-gray w3-card" style="opacity: 0.9" id="bar">
+                <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
+                <a href="#home" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+                <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PORTFOLIO</a>
+                <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-padding-large w3-button">NOTES <i class="fa fa-caret-down"></i></button>     
+                    <div class="w3-dropdown-content w3-bar-block w3-card-3 w3-gray">
+                      <a href="#" class="w3-bar-item w3-button">...</a>
+                    </div>
+                </div>
+                <a href="https://github.com/DimitrisTzikas" target="_blank" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"><i class="fa fa-github"></i></a>
+                <a href="https://gitlab.com/DimitrisTzikas" target="_blank" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"><i class="fa fa-gitlab"></i></a>
+                <a href="https://twitter.com/TzikasDimitris" target="_blank" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"><i class="fa fa-twitter"></i></a>   
             </div>
-        </nav>
-
-        <!-- Page Content -->
-        <div class="w3-main w3-padding-large" style="margin-left:40%">
-            <!-- Menu icon to open sidebar -->
-            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()">
-                <i class="fa fa-bars"></i>
-            </span>
         </div>
-        <!--End Page Content-->
+    
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top w3-gray" style="margin-top:46px;opacity: 0.9;">
+            <a href="#portfolio" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">PORTFOLIO</a>
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">ABOUT</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">CONTACT</a>
+        </div>
 
-        <!-- Page Notes -->
-        <span class="w3-sidebar w3-black w3-animate-down w3-xxlarge" style="display:none;padding-top:150px;down:0;z-index:2" id="myNotes">
-            <div class="w3-bar-block w3-center">
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-                <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-                <a href="#" class="we-bar-itme w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Notes</a>
+        <!-- Particles -->
+        <div id="particles-js"></div>
+
+        <!-- Header -->
+        <header class="w3-container w3-center" id="home">
+            <div class="box">
+                <div class="slide-up">
+                    <h1 style="font-size:43pt"><b>Dimitris Tzikas</b></h1>
+                    <hr style="width: 35%; position: relative;left: 32.5%;">
+                    <p style="font-size: 16pt;">ATEI Student</p>                
+                </div>
             </div>
-        </span>
-        <!-- End Page Notes -->
+        </header>
 
+        <div class="spacer"></div>
+
+        <!-- Portfolio -->
+        <div class="w3-container w3-center" id="portfolio">
+            <div class="box" id="check-scroll">
+                <h3>Portfolio</h3>
+                    <p>
+                        Megalodon (Carcharocles megalodon), an extinct species of shark, lived around 23 to 2.6 million years ago, from the Early Miocene to the Late Pliocene. Once thought to be closely related to the great white shark (C. carcharias), it may be a member of the extinct family Otodontidae. It may have looked like a stocky great white, measuring at most 18 meters (59 ft), and averaging 10.5 metres (34 ft). Its large jaws exerted an estimated bite force of 108,500 to 182,200 newtons (24,400 to 41,000 lbf), coupled with thick teeth to grab large, struggling prey, crushing the heart and lungs of the marine mammals – mainly baleen whales – that it fed on in oceans around the world. It is thought that its decline was due to competition from other large predators (such as Livyatan), the ice ages, and the shift in whale populations. The shark has made appearances in media such as the Discovery Channel's docufiction Megalodon: The Monster Shark Lives. (Full article...) 
+                    </p>
+            </div>
+        </div>
+    
+
+        <div class="spacer"></div>
+
+        <!-- Scripts -->
+        <script src="js/main.js"></script>
+        <script src="particles/particles.js"></script>
         <script>
-            // Open and close sidebar
-            function openNav() {
-                document.getElementById("mySidebar").style.width = "60%";
-                document.getElementById("mySidebar").style.display = "block";
-            }
-            
-            function closeNav() {
-                document.getElementById("mySidebar").style.display = "none";
-            }
-
-            // Open notes
-            function openNotes() {
-                document.getElementById("myNotes").style.width = "60%";
-                document.getElementById("myNotes").style.display = "block";
-            }
+            particlesJS.load('particles-js', 'particles/particles.json', function() {
+                console.log('particles.js loaded - callback');
+            });
         </script>
 
-    </body>
+</body>
 </html>
