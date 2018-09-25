@@ -16,12 +16,13 @@ function toggleMenu() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-    
+
+
 // Select all links with hashes
-$('a[href*="#"]')
+ $('a[href*="#"]')
 // Remove links that don't actually link to anything
-.not('[href="#"]')
-.not('[href="#0"]')
+ .not('[href="#"]')
+ .not('[href="#0"]')
 .click(function(event) {
   // On-page links
   if (
@@ -54,3 +55,12 @@ $('a[href*="#"]')
     }
   }
 );
+
+/* 
+ $(document).on('click', 'a[href^="#"]', function (event) {
+  event.preventDefault();
+
+  $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+  }, 1000);
+}); */
