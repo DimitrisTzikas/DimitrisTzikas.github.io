@@ -19,6 +19,11 @@
         <h1 style="text-align: center;">Οδηγός εγκατάστασης Arch linux</h1>
         <hr>
         <ul>
+        	<li><a href="#net">Network</a></li>
+        	<ul>
+        		<li><a href="#wifi">Wifi</a></li>
+        		<li><a href="#eth">Ethernet</a></li>
+        	</ul>
         	<li><a href="#partitioning">Partitioning</a></li>
         	<li><a href="#formating">Formating</a></li>
         	<li><a href="#installing">Installing Arch</a></li>
@@ -28,6 +33,12 @@
         </ul>
         <hr>
 
+    	<h3 id="net">Network</h3>
+    	<h4 id="wifi">Wifi</h4>
+    	<p>Για να συνδεθείτε στο wifi πατήστε την εντολή wifi-menu και διαλέξτε το wifi που επιθυμείτε.</p>
+    	<h4 id="eth">Ethernet</h4>
+		<p>Για να συνδεθείτε στο δίκτυο εκτελέστε την εντολή dhcpcd.</p>
+        
         <p>
         	<span style="color: red; font-weight: bold;">Προσοχή!</span> Πριν κάνετε οτιδήποτε καλό θα ήταν να βεβαιωθείτε πως ο υπολογιστής σας δεν έχει σημαντικά δεδομένα.
         </p>
@@ -102,7 +113,8 @@
         <p>Ας δώσουμε στο root χρήστη έναν κωδικό για να μην κλειδωθούμε έξω από το λειτουργικό σύστημα μας.</p>
         <p id="code"><a href="https://linux.die.net/man/5/passwd" target="_blank">passwd</a></p>
         <p>Πατήστε δύο φορές τον κωδικό σας.</p>
-        <p></p>
+        <p>Αν χρησιμοποιείτε wifi πρέπει να κατεβάσετε τα πακέτα wifi-menu, dialog και wpa_supplicant</p>
+        <p id="code">pacman -S wifi-menu dialog wpa_supplicant</p>
         <p>Τώρα ας δημιουργήσουμε το initial ramdisk environment:</p>
         <p id="code"><a href="https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8" target="_blank">mkinitcpio</a> -p linux</p>
         <p>Αυτό το βήμα συνήθως γίνεται όταν ολοκληρώνεται η εγκατάσταση του συστήματος οπότε αν δεν έχετε κάνει κάποια αλλαγή στο /etc/mkinitcpio.conf  μπορείτε να παραλείψετε αυτό το βήμα. Στη περίπτωση που δεν κάνατε καμία αλλαγή και εκτελέσετε την εντολή δεν υπάρχει κανένα πρόβλημα.</p>
