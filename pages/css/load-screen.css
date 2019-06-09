@@ -1,0 +1,28 @@
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loading{
+	animation: anime1 3s linear infinite;
+	position: relative;
+}
+
+@keyframes anime1{
+	0%{top: 0px;}
+	20%{top: -100px;}
+	25%{top: 0px;}
+	30%{top: -17px;}
+	35%{top: 0px;}
+	40%{top: -13px;}
+	45%{top: 0px;}
+	50%{top: -8px;}
+	55%{top: 0px;}
+	60%{top: -4px;}
+	65%{top: 0px;}
+	100%{top: 0px;}
+}

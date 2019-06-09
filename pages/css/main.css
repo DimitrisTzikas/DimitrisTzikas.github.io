@@ -1,0 +1,61 @@
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	background-color: black;
+}
+
+.meme{
+	position: relative;
+	top: -110px;
+	animation: hey 5s linear;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@keyframes hey{
+	0%{transform: rotate(30deg); left: -50%;}
+	20%{transform: rotate(30deg); left: -35%;}
+	30%{transform: rotate(30deg); left: -35%;}
+	40%{transform: rotate(30deg); left: -36%;}
+	80%{transform: rotate(30deg); left: -50%;}
+	100%{transform: rotate(30deg); left: -10%;}
+
+}
+
+.menu{
+	position: relative;
+	left: -25%;
+	background: black;
+	height: 100%;
+	width: 17%;
+	align-items: center;
+	justify-content: center;
+	animation: show-menu 6s linear;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.menu div{
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes show-menu{
+	0%{left: -25%;}
+	20%{left: -10%;}
+	25%{left: -10%;}
+	26%{left: -13%;}
+	29%{left: -10%;}
+	32%{left: -13%;}
+	35%{left: -10%;}
+	38%{left: -13%;}
+	41%{left: -10%;}
+	50%{left: -10%;}
+	55%{left: -16%;}
+	57%{left: -10%;}
+	60%{left: -10%;}
+	75%{left: -25%;}
+	76%{left: 0%;}
+	100%{left: 0%;}
+}
