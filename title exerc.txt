@@ -1,0 +1,142 @@
+title exerc
+
+code segment
+assume cs:code, ds:data, ss:stack
+start:
+	mov ax, data
+	mov ds, ax
+
+	mov ah, 4ch
+	int 21h
+code ends
+
+data segment
+data ends
+
+stack segment stack
+	db 256 dup(0)
+stack ends
+end start
+
+=========================================================================
+
+Input (with show) (using ax register)
+mov ah, 01h
+int 21h
+-----------------
+Input (without show) (using ax register)
+mov ah, 08h
+int 21h
+-----------------
+Print String
+lea dx, message
+mov ah, 09h
+int 21h
+-----------------
+Print Char
+mov dl, char
+mov ah, 02h
+int 21h
+-----------------
+MUL
+A*AL=AX, DL
+///////////
+A*AX=DX:AX, DL
+-----------------
+DIV
+AX/A=AL, AH
+///////////
+DX:AX/A=AX, DX
+
+=========================================================================
+
+subroutine proc near
+	ret
+subroutine endp
+
+call subroutine
+
+=========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+// #define temp (((analogRead(sensor))*5.0/1024)-0.5)*100
+#define green 9
+#define blue 10
+#define red 11
+#define button 8
+#define sensor A0
+
+long temp;
+
+int currentMillis = 0, lastMillis = 0;
+
+void setup() {
+  pinMode(sensor, INPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(red, OUTPUT);
+  pinMode(button, INPUT_PULLUP);
+  
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("Current Temperature: ");
+  
+  // randomSeed(analogRead(0));
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setCursor(0, 1);
+  currentMillis = millis();
+  if(currentMillis - lastMillis == 2500)
+  {   
+    lastMillis = currentMillis;
+    temp = random(1L,30L);
+    tempLeds(temp);
+    lcd.print(temp);   
+  }
+  
+  if(digitalRead(button))
+  {    
+    temp = random(1L,30L);
+    tempLeds(temp);
+    lcd.print(temp);
+  } 
+}
+
+void tempLeds(int temp)
+{
+  if(temp > 25L)
+    rgb(255, 0, 0); // red
+  else if(temp < 5L)
+    rgb(0, 255, 0); // blue
+  else
+    rgb(255, 0, 255); // yellow
+}
+
+void rgb(int r,int b,int g)
+{
+  analogWrite(red, r);
+  analogWrite(blue, b);
+  analogWrite(green, g);
+}
