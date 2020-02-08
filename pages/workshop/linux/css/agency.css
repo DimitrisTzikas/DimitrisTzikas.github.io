@@ -322,7 +322,7 @@ section h3.section-subheading {
   margin: 0 auto;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
-  background: rgba(120, 80, 70, 0.6);
+  background: rgba(80, 80, 80, 0.6);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -765,7 +765,7 @@ body {
   margin: 0 auto;
 }
 #other .other-item .other-link .other-hover {
-  background: rgba(120, 80, 70, 0.6); 
+  background: rgba(80, 80, 80, 0.6); 
   position: absolute;
   width: 100%;
   height: 100%;
@@ -813,4 +813,10 @@ body {
 }
 #other * {
   z-index: 2;
+}
+.blink {
+  animation: blinker 1s infinite;
+}
+@keyframes blinker {  
+  50% { opacity: 0; }
 }
