@@ -103,9 +103,58 @@
     </section>
 
     <!-- PDFs Sectoin -->
-    <section id="pdfs" class="bg-light-gray">
-        <div class="container text-center">
-            <h2 class="section-heading">PDFs</h2>
+    <section id="other" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">PDFs</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 other-item">
+                    <a href="#introduction" class="other-link" data-toggle="modal">
+                        <div class="other-hover">
+                            <div class="other-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/pdfs/introduction.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="other-caption">
+                        <h4>Εισαγωγή</h4>
+                        <p class="text-muted">Εισαγωγή στα Λειτουργικά Συστήματα</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 other-item">
+                    <a href="#guides" class="other-link" data-toggle="modal">
+                        <div class="other-hover">
+                            <div class="other-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/other/guides.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="other-caption">
+                        <h4>---</h4>
+                        <p class="text-muted">---</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 other-item">
+                    <a href="#workshops" class="other-link" data-toggle="modal">
+                        <div class="other-hover">
+                            <div class="other-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/other/workshops.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="other-caption">
+                        <h4>---</h4>
+                        <p class="text-muted">---</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -115,6 +164,48 @@
             <h2 class="section-heading">Exercises</h2>
         </div>
     </section>
+
+    <!-- Introduction-->
+    <div class="portfolio-modal modal fade" id="introduction" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body" style="text-align: left">
+                                <p style="font-size: 1.4em">Εισαγωγή στα Λειτουργικά Συστήματα</p>
+                                <p>
+                                    Οι πρώτοι υπολογιστές όπως ο Eniac (1945) δεν είχαν κάποιο λειτουργικό σύστημα αλλά υπήρχαν χειριστές όπου φρόντιζαν για τη σωστή λειτουργία και εκτέλεση των προγραμμάτων. Καθώς όμως οι υπολογιστές άρχισαν να γίνονται πιο διάσημοι και γρηγορότεροι αυτός ο τρόπος λειτουργίας του υπολογιστή έγινε χρονοβόρος καθώς χρειαζόταν περισσότερο χρόνο να φορτωθεί το πρόγραμμα στον υπολογιστή από την ίδια την εκτέλεση του προγράμματος, έτσι η ιδέα ενός λογισμικού που θα διαχειρίζεται το υλικό κομμάτι του υπολογιστή έγινε απαραίτητη.
+                                </p>                                
+                                <p>
+                                    Πριν αρχίσουμε να χρησιμοποιούμε λειτουργικά συστήματα, οι προγραμματιστές έπρεπε να δημιουργούν προγράμματα όπου υποστήριζαν τις συσκευές που είχε ο εκάστοτε υπολογιστής. Για όσο οι υπολογιστές δεν ήταν διάσημοι αυτό δεν ήταν πρόβλημα αλλά όταν άρχισαν να χρησιμοποιούνται από περισσότερο κόσμο υπήρχε πρόβλημα συμβατότητας γιατί μπορεί κάποιος να έχει τον ίδιο υπολογιστή αλλά διαφορετικά περιφερειακά. Αυτό είναι το δεύτερο πρόβλημα που έλυσαν τα λειτουργικά συστήματα, παρέχουν APIs (γνωστά ως device drivers) όπου ο προγραμματιστής μπορεί να χρησιμοποιήσει περιφερειακές συσκευές χωρίς να χρειάζεται να ξέρει χαμηλού επιπέδου λεπτομέρειες για το υλικό των συσκευών.
+                                </p>
+                                <p>
+                                    Τα σύγχρονα λειτουργικά συστήματα είναι πολύπλοκα και αποτελούνται από εκατομμύρια γραμμές κώδικα. Κάποιοι από του τομείς που απασχολούν τα σύγχρονα λειτουργικά συστήματα είναι:
+                                    <ul>
+                                        <li>Διαχείριση διεργασιών</li>
+                                        <li>Διαχείριση μνήμης</li>
+                                        <li>Συστήματα αρχείων</li>
+                                        <li>Δικτύωση</li>
+                                        <li>Εσωτερική ασφάλεια</li>
+                                        <li>Εξωτερική ασφάλεια</li>
+                                        <li>Γραφική διασύνδεση χρήστη</li>
+                                        <li>Οδηγοί συσκευών</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="../../../vendor/jquery/jquery.min.js"></script>
