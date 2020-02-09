@@ -754,17 +754,17 @@ body {
   webkit-tap-highlight-color: #068d06;
 }
 
-#other .other-item {
+#pdfs .pdfs-item {
   margin: 0 0 15px;
   right: 0;
 }
-#other .other-item .other-link {
+#pdfs .pdfs-item .pdfs-link {
   display: block;
   position: relative;
   max-width: 400px;
   margin: 0 auto;
 }
-#other .other-item .other-link .other-hover {
+#pdfs .pdfs-item .pdfs-link .pdfs-hover {
   background: rgba(80, 80, 80, 0.6); 
   position: absolute;
   width: 100%;
@@ -774,10 +774,10 @@ body {
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
 }
-#other .other-item .other-link .other-hover:hover {
+#pdfs .pdfs-item .pdfs-link .pdfs-hover:hover {
   opacity: 1;
 }
-#other .other-item .other-link .other-hover .other-hover-content {
+#pdfs .pdfs-item .pdfs-link .pdfs-hover .pdfs-hover-content {
   position: absolute;
   width: 100%;
   height: 20px;
@@ -787,36 +787,98 @@ body {
   margin-top: -12px;
   color: white;
 }
-#other .other-item .other-link .other-hover .other-hover-content i {
+#pdfs .pdfs-item .pdfs-link .pdfs-hover .pdfs-hover-content i {
   margin-top: -12px;
 }
-#other .other-item .other-link .other-hover .other-hover-content h3,
-#other .other-item .other-link .other-hover .other-hover-content h4 {
+#pdfs .pdfs-item .pdfs-link .pdfs-hover .pdfs-hover-content h3,
+#pdfs .pdfs-item .pdfs-link .pdfs-hover .pdfs-hover-content h4 {
   margin: 0;
 }
-#other .other-item .other-caption {
+#pdfs .pdfs-item .pdfs-caption {
   max-width: 400px;
   margin: 0 auto;
   background-color: white;
   text-align: center;
   padding: 25px;
 }
-#other .other-item .other-caption h4 {
+#pdfs .pdfs-item .pdfs-caption h4 {
   text-transform: none;
   margin: 0;
 }
-#other .other-item .other-caption p {
+#pdfs .pdfs-item .pdfs-caption p {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 16px;
   margin: 0;
 }
-#other * {
+#pdfs * {
   z-index: 2;
 }
+
 .blink {
   animation: blinker 1s infinite;
 }
 @keyframes blinker {  
   50% { opacity: 0; }
+}
+
+#guides .guides-item {
+  margin: 0 0 15px;
+  right: 0;
+}
+#guides .guides-item .guides-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#guides .guides-item .guides-link .guides-hover {
+  background: rgba(80, 80, 80, 0.6); 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+#guides .guides-item .guides-link .guides-hover:hover {
+  opacity: 1;
+}
+#guides .guides-item .guides-link .guides-hover .guides-hover-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: white;
+}
+#guides .guides-item .guides-link .guides-hover .guides-hover-content i {
+  margin-top: -12px;
+}
+#guides .guides-item .guides-link .guides-hover .guides-hover-content h3,
+#guides .guides-item .guides-link .guides-hover .guides-hover-content h4 {
+  margin: 0;
+}
+#guides .guides-item .guides-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+  padding: 25px;
+}
+#guides .guides-item .guides-caption h4 {
+  text-transform: none;
+  margin: 0;
+}
+#guides .guides-item .guides-caption p {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+}
+#guides * {
+  z-index: 2;
 }
