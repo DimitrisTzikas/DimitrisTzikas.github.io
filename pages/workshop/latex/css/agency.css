@@ -890,3 +890,9 @@ body {
 #emphasis{
   color: #aa5555;
 }
+
+#side-note{
+  color: #777777;
+  text-align: left;
+  inline-size: 300px;
+}

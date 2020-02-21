@@ -152,17 +152,17 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 pdfs-item">
-                    <a href="#" class="pdfs-link" data-toggle="modal">
+                    <a href="#formating" class="pdfs-link" data-toggle="modal">
                         <div class="pdfs-hover">
                             <div class="pdfs-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/pdfs/commingsoon.jpg" class="img-responsive" alt="">
+                        <img src="img/pdfs/formating.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="pdfs-caption">
-                        <h4>---</h4>
-                        <p class="text-muted">---</p>
+                        <h4>Μορφοποίηση</h4>
+                        <p class="text-muted">Λέξεων, γραμμών και παραγράφων</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 pdfs-item">
@@ -310,6 +310,50 @@
                                     \end{document}
                                 </p>
                                 <img id="border" src="img/pdfs/latex-document-2.png" alt="latex-document">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formating -->
+    <div class="portfolio-modal modal fade" id="formating" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body" style="text-align: left">
+                                <p style="font-size: 1.4em">Μορφοποίηση</p>
+                                <p style="font-size: 1.2em">Λογική μορφοποίηση κειμένου</p>
+                                <p>Στο LaTeX όταν θέλουμε να γράψουμε κάτι, όπως έναν τίτλο, δεν χρειάζεται να ορίσουμε τη γραμματοσειρά, το χρώμα ή γενικά το οτιδήποτε για τον τίτλο μας. Το μόνο που έχουμε να κάνουμε είναι να πούμε στο LaTeX πως αυτό που γράφουμε είναι ο τίτλος, κατόπιν το LaTeX θα ασχοληθεί με τη μορφοποίηση του κειμένου. Αυτός ο τρόπος μορφοποίησης είναι γνωστός ως λογική μορφοποίηση. Για να καταλάβουμε καλύτερα τι είναι η λογική μορφοποίηση ας δούμε το παρακάτω παράδειγμα.</p>
+                                <p id="code">\documentclass{article}
+
+                                    \usepackage[english,greek]{babel}
+                                    
+                                    \begin{document}
+                                    
+                                    \title{Λογική μορφοποίηση κειμένου}
+                                    \author{Δημήτριος Τζήκας}
+                                    \date{21 Φεβρουαρίου, 2020}
+                                    
+                                    \maketitle
+                                    
+                                    \end{document}
+                                </p>
+                                <p>Όπως μπορούμε να δούμε στο παράδειγμα, δεν έχουμε ορίσει πουθενά το πως θέλουμε να γίνει η μορφοποίηση. Το μόνο που έχουμε ορίσει είναι το όνομα του τίτλου, του συγγραφέα και την ημερομηνία. Επίσης, έχουμε χρησιμοποιήσει και την εντολή \maketitle, όπου δηλώνει στο LaTeX πως θέλουμε να δημιουργήσει τον τίτλο.</p>
+                                <img id="border" src="img/pdfs/latex-document-3.png" alt="latex-document">
+                                <p>Το έγγραφο που δημιουργήσαμε έχει μορφοποιημένο τον τίτλο, συγγραφέα και ημερομηνία, γιατί έγινε αυτό; Η μορφοποίηση έχει γίνει επειδή ορίσαμε τον τύπο του εγγράφου ως άρθρο. Το LaTeX χρησιμοποιεί την κλάση ως το πρότυπο για να μορφοποιήσει το κείμενο μας, όπου θα μπορούσαμε να αλλάξουμε τον τύπο και να αφήσουμε το LaTeX να αλλάξει τη μορφοποίηση. Αυτό είναι ιδιαίτερα χρήσιμο καθώς ας φανταστούμε πως θέλουμε να δημιουργήσουμε κάποια βιογραφικά, αλλά έχουμε διάφορους παραλήπτες όπου ζητάν να χρησιμοποιήσουμε διαφορετικά πρότυπα. Σε αυτό το σενάριο θα έπρεπε να ασχοληθούμε με τη μορφοποίηση τόσες φορές όσα είναι και τα διαφορετικά πρότυπα, με το LaTeX όμως το μόνο που έχουμε να κάνουμε είναι να γράψουμε το βιογραφικό μας και κατόπιν να πούμε το LaTeX να μορφοποιήσει το κείμενο για κάθε πρότυπο που έχουμε.</p>
+                                <p id="side-note">Σε αυτό το σημείο θα ήταν καλό να σημειωθεί πως το LaTeX θεωρεί τα πολλαπλά κενά ως ένα κενό και τις πολλαπλές κενές γραμμές ως μια κενή γραμμή.</p>
+                                
                             </div>
                         </div>
                     </div>
