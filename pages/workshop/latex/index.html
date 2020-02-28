@@ -367,7 +367,15 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body" style="text-align: left">
                                 <p style="font-size: 1.4em">Εγκατάσταση Latex</p>
-                                
+                                <p style="font-size: 1.2em">Εγκατάσταση σε Arch Linux</p>
+                                <p>Εγκαταστήστε το πακέτο texlive-langgreek εκτελώντας την παρακάτω εντολή.</p>
+                                <p id="code">sudo pacman -Sy texlive-langgreek</p>
+                                <p style="font-size: 1.2em">Εγκατάσταση σε Ubuntu</p>
+                                <p>Εγκαταστήστε το πακέτο texlive-latex-extra εκτελώντας την παρακάτω εντολή.</p>
+                                <p id="code">sudo apt install texlive-latex-extra</p>
+                                <p style="font-size: 1.2em">Εγκατάσταση σε Windows</p>
+                                <p>Για να εγκαταστήσετε το LaTeX θα πρέπει να πάτε στον ιστότοπο του <a href="https://miktex.org/download">MiKTeX</a>, να κατεβάσετε τον Wizard και να τον εκτελέσετε.</p>
+                                <img id="border" src="img/pdfs/windows.png" alt="windows10-and-latex">
                             </div>
                         </div>
                     </div>
@@ -932,6 +940,49 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body" style="text-align: left">
                                 <p style="font-size: 1.4em">Αυτόματη δημιουργία διαγραμμάτων</p>
+                                <p>Η δημιουργία διαγραμμάτων είναι αρκετά εύκολη, τουλάχιστον για απλά διαγράμματα. Για να μπορέσουμε να ορίσουμε το διάγραμμα μας, θα πρέπει πρώτα να δηλώσουμε το περιβάλλον tikzpicture και μέσα σε αυτό το περιβάλλον axis, κατόπιν το μόνο που έχουμε να κάνουμε είναι να χρησιμοποιήσουμε τη δήλωση \addplot για να δημιουργήσουμε το διάγραμμα μας.</p>
+                                <p id="side-note">Η σύνταξη της δήλωσης \addplot είναι η εξής: \addplot[options]{file or function}</p>
+                                <p>Ας δούμε το παρακάτω παράδειγμα.</p>
+                                <p id="code">\documentclass{article}
+
+                                    \usepackage{pgfplots}
+                                    
+                                    \begin{document}
+
+                                    <span id="emphasis">\begin{tikzpicture}
+                                        \begin{axis}[]
+                                        \addplot[ domain=0:3, samples=10 ]{x};
+                                        \end{axis}
+                                        \end{tikzpicture}
+                                    </span>
+
+                                    \end{document}
+                                </p>
+                                <img id="border" src="img/pdfs/plot-1.png" alt="latex-plot">
+                                <p id="side-note">Όταν βάζουμε μεγάλο δείγμα ο υπολογιστής θα χρειαστεί περισσότερη ώρα για να υπολογίσει το αποτέλεσμα, οπότε θα πρέπει να μη δηλώνουμε πολύ μεγάλα ποσά καθώς αν έχουμε πολλά διαγράμματα θα καθυστερεί πολύ.</p>
+                                <p>Στο παράδειγμα μπορούμε να δούμε πως έχουμε ορίσει το διάστημα 0-3 και παίρνουμε 10 δείγματα για να κάνουμε το διάγραμμα. Ας δούμε ένα άλλο διάγραμμα με τις συναρτήσεις x, x^2, x^3, x^4.</p>
+                                <p id="code">...
+                                    \begin{axis}[]
+                                    \addplot[ domain=0:3, samples=10 ]{x};
+                                    \addplot[ red, domain=0:3, samples=10 ]{x^2};
+                                    \addplot[ green, domain=0:3, samples=10 ]{x^3};
+                                    \addplot[ blue, domain=0:3, samples=10 ]{x^4};
+                                    \end{axis}
+                                    ...
+                                </p>
+                                <img id="border" src="img/pdfs/plot-2.png" alt="latex-plot">
+                                <p style="font-size: 1.2em">Δημιουργία διαγραμμάτων με csv</p>
+                                <p>Το να χρησιμοποιούμε csv αρχεία για να δημιουργούμε τα διαγράμματα είναι μονόδρομος, ειδικά αν έχουμε μεγάλα σε όγκο δεδομένα αλλά ακόμη και στη περίπτωση των συναρτήσεων είναι καλό να τα χρησιμοποιούμε, καθώς δεν χρειάζεται ο υπολογιστής να υπολογίζει τις τιμές κάθε φορά που μεταγλωττίζουμε το κείμενο.</p>
+                                <p id="side-note">Η σύνταξη της εντολής για να κάνουμε εισαγωγή δεδομένων από αρχείο csv είναι η εξής: \addplot table [x=col_name, y=col_name, col sep=comma] {file};</p>
+                                <p id="code">...
+                                    \begin{axis}[]
+                                    \addplot table [x=a, y=b, col sep=comma] {data.csv};
+                                    \addplot table [x=a, y=b, col sep=comma] {data2.csv};
+                                    \end{axis}
+                                    ...
+                                </p>
+                                <img id="border" src="img/pdfs/plot-3.png" alt="latex-plot">
+                                <p id="side-note">Για περισσότερα πατήστε <a href="https://ctan.org/pkg/pgfplots">εδώ</a>.</p>
                             </div>
                         </div>
                     </div>
