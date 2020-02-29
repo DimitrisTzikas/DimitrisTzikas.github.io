@@ -260,7 +260,7 @@
                     </a>
                     <div class="pdfs-caption">
                         <h4>Παρουσιάσεις</h4>
-                        <p class="text-muted">Δημιουργία παρουσιάσεων</p>
+                        <p class="text-muted">Παρουσιάσεις με το Beamer</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 pdfs-item">
@@ -1006,6 +1006,147 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body" style="text-align: left">
                                 <p style="font-size: 1.4em">Δημιουργία παρουσιάσεων</p>
+                                <p>Για να δημιουργήσουμε την πρώτη μας παρουσίαση θα χρησιμοποιήσουμε το πακέτο beamer, για να το κάνουμε αυτό πρέπει να δηλώσουμε τον τύπο του εγγράφου ως beamer.</p>
+                                <p id="code"><span id="emphasis">\documentclass{beamer}</span>
+
+                                    \begin{document}
+                                    
+                                    My first presentation with {\LaTeX}
+                                    
+                                    \end{document}
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation1.png" alt="latex-presentation">
+                                <p>Για να δημιουργήσουμε την πρώτη διαφάνεια όπου θα έχει τον τίτλο της παρουσίασης, το όνομα μας, etc, μπορούμε να χρησιμοποιήσουμε τις δηλώσεις που χρησιμοποιούσαμε μέχρι στιγμής.</p>
+                                <p id="code">\documentclass{beamer}
+
+                                    \title{{\LaTeX} presentation}
+                                    \author{Dimitris Tzikas}
+                                    \date{\today}
+                                    
+                                    \begin{document}
+                                    \maketitle
+                                    
+                                    \end{document}
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation2.png" alt="latex-presentation">
+                                <p>Το LaTeX χρησιμοποιεί δύο ορολογίες στις παρουσιάσεις. Η πρώτη είναι το frame, όπου δηλώνει το περιεχόμενο και η δεύτερη είναι η διαφάνεια, όπου είναι σελίδα στη παρουσίαση μας. Ίσως αυτή να μην είναι η καλύτερη εξήγηση αλλά θα δούμε παρακάτω μέσω παραδειγμάτων ποια είναι η διαφορά τους. Για τώρα ας δημιουργήσουμε ένα frame.</p>
+                                <p id="code">\documentclass{beamer}
+
+                                    \title{{\LaTeX} presentation}
+                                    \author{Dimitris Tzikas}
+                                    \date{\today}
+                                    
+                                    \begin{document}
+                                    \maketitle
+                                    
+                                    <span id="emphasis">\begin{frame}</span>
+                                      \begin{itemize}
+                                      \item One
+                                      \item Two
+                                      \item Three
+                                      \end{itemize}
+                                    <span id="emphasis">\end{frame}</span>
+                                    
+                                    \end{document}
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation3.png" alt="latex-presentation">
+                                <p>Χρησιμοποιώντας το περιβάλλον frame μπορέσαμε και δημιουργήσαμε το πρώτο μας frame, στο οποίο βάλαμε μια λίστα. Ας υποθέσουμε πως θέλουμε να δείξουμε με τη σειρά τα αντικείμενα της λίστας και όχι όλα μαζί. Για να το κάνουμε αυτό μπορούμε να χρησιμοποιήσουμε την εντολή \pause.</p>
+                                <p id="code">...
+                                    \begin{frame}
+
+                                    \begin{itemize}
+                                    \item One <span id="emphasis">\pause</span>
+                                    \item Two <span id="emphasis">\pause</span>
+                                    \item Three
+                                    \end{itemize}
+
+                                    \end{frame}
+                                    ...
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation4-1.png" alt="latex-presentation">
+                                <img id="border" src="img/pdfs/latex-presentation4-2.png" alt="latex-presentation">
+                                <img id="border" src="img/pdfs/latex-presentation4-3.png" alt="latex-presentation">
+                                <p>Εμείς δηλώσαμε ένα frame στο οποίο χρησιμοποιήσαμε την εντολή \pause, το αποτέλεσμα είναι πως το LaTeX δημιούργησε τρις διαφάνειες.</p>
+                                <p>Ας υποθέσουμε πως δεν μας αρέσει η εμφάνιση, τι μπορούμε να κάνουμε; Η απάντηση είναι πως μπορούμε να δημιουργήσουμε το δικός μας πρότυπο ή να αλλάξουμε το θέμα που χρησιμοποιούμε, εμείς θα κάνουμε το δεύτερο. Για να αλλάξουμε το θέμα μπορούμε να χρησιμοποιήσουμε τη δήλωση \usetheme και τα θέματα που υπάρχουν μπορούμε να τα δούμε στο <a href="http://www.deic.uab.es/~iblanes/beamer_gallery/index.html">Beamer theme gallery</a>.</p>
+                                <p id="side-note"></p>
+                                <p id="code">\documentclass{beamer}
+
+                                    <span id="emphasis">\usetheme{PaloAlto}</span>
+                                    
+                                    \title{{\LaTeX} presentation}
+                                    ...
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation5.png" alt="latex-presentation">
+                                <p>Για να ορίσουμε το δικό μας χρώμα χρησιμοποιούμε τις παρακάτω εντολές.</p>
+                                <p id="code">\usetheme{PaloAlto}
+                                    \definecolor{color-name}{rgb}{.0,.31,.67}
+                                    \usecolortheme[named=color-name]{structure}
+                                </p>
+                                <p>Ορισμός τίτλου και υπότιτλου.</p>
+                                <p id="code">...
+                                    \begin{frame}
+                                    <span id="emphasis">\frametitle{Title}</span>
+                                    <span id="emphasis">\framesubtitle{Subtitle}</span>
+                                    \begin{itemize}
+                                    \item One
+                                    \item Two
+                                    \item Three
+                                    \end{itemize}
+                                  \end{frame}
+                                  ...
+                                  </p>
+                                <p id="code">...
+                                    <span id="emphasis">\begin{frame}{Title}{Subtitle}</span>
+                                    \begin{itemize}
+                                    \item One
+                                    \item Two
+                                    \item Three
+                                    \end{itemize}
+                                    \end{frame}
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation6.png" alt="latex-presentation">
+                                <p>Επίσης, μπορούμε να δηλώσουμε τις ενότητες που έχει η παρουσίαση μας.</p>
+                                <p id="code">...
+                                    \begin{document}
+                                    \maketitle
+                                    
+                                    <span id="emphasis">\section{Section 1}</span>
+                                    
+                                    \begin{frame}{Title}{Subtitle}
+                                      \begin{itemize}
+                                      \item One
+                                      \item Two
+                                      \item Three
+                                      \end{itemize}
+                                    \end{frame}
+                                    
+                                    <span id="emphasis">\section{Section 2}</span>
+                                    
+                                    \begin{frame}{Title2}{Subtitle2}
+                                      \begin{itemize}
+                                      \item One
+                                      \item Two
+                                      \item Three
+                                      \end{itemize}
+                                    \end{frame}
+                                    
+                                    \end{document}
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation7-1.png" alt="latex-presentation">
+                                <img id="border" src="img/pdfs/latex-presentation7-2.png" alt="latex-presentation">
+                                <p>Columns.</p>
+                                <p id="code">...
+                                    \begin{frame}
+                                    <span id="emphasis">\begin{columns}</span>
+                                    <span id="emphasis">\column{.5\textwidth}</span>
+                                      Column1
+                                      <span id="emphasis">\column{.5\textwidth}</span>
+                                      Column2
+                                    <span id="emphasis">\end{columns}</span>
+                                    \end{frame}
+                                </p>
+                                <img id="border" src="img/pdfs/latex-presentation8.png" alt="latex-presentation">
+                                <p>Για περισσότερα πατήστε <a href="https://ctan.org/pkg/beamer">εδώ</a>.</p>
                             </div>
                         </div>
                     </div>
