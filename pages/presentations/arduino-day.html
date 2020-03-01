@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<base href="../reveal/">
+
+		<title>Arduino Day</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="presentations/arduino-day/background.png">
+					<section>
+						<h2 style="background-color: rgba(0, 0, 0,0.8);">Arduino Day</h2>
+					</section>
+				</section>
+
+				<section data-background="presentations/arduino-day/background2.png">
+					<section>
+						<p style="font-size: 1.2em; background: rgba(0, 0, 0,0.8);">IoT</p>
+					</section>
+					<section>
+						<p style="font-size: 1.2em; background: rgba(0, 0, 0,0.8);">Τι είναι το IoT;</p>
+						<p style="background: rgba(0, 0, 0,0.8);">Το IoT είναι το διαδίκτυο των πραγμάτων, όπου αποτελεί το δίκτυο επικοινωνίας πληθώρας συσκευών. Μέσο αυτού, μπορούν κάθε είδους αντικείμενα να επικοινωνήσουν μεταξύ τους.</p>
+					</section>
+					<section>
+						<p style="font-size: 1.2em; background: rgba(0, 0, 0,0.8);">Ποιος είναι ο στόχος της παρουσίασης;</p>
+						<img class="fragment" src="presentations/arduino-day/lamp.png" alt="lamp">
+						<img class="fragment" src="presentations/arduino-day/smart-lamp.png" alt="lamp">
+					</section>
+				</section>
+				
+				<section data-background="presentations/arduino-day/background3.png">
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0,0.8);">Τι θα χρειαστούμε;</p>
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
