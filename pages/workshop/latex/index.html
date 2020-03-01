@@ -278,7 +278,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 pdfs-item">
-                    <a href="#" class="pdfs-link" data-toggle="modal">
+                    <a href="#ieeetran" class="pdfs-link" data-toggle="modal">
                         <div class="pdfs-hover">
                             <div class="pdfs-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -288,7 +288,7 @@
                     </a>
                     <div class="pdfs-caption">
                         <h4>IEEE Template</h4>
-                        <p class="text-muted">---</p>
+                        <p class="text-muted">IEEEtran</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 pdfs-item">
@@ -1263,6 +1263,119 @@
                                 <p>Επίσης για την απλοποίηση αυτής της διαδικασίας μπορούμε να κάνουμε ένα ψευδώνυμο.</p>
                                 <p id="code">alias texpackage='texpackage(){tlmgr install $1 && sudo texhash}; texpackage'</p>
                                 <p id="side-note">Το ψευδώνυμο το τοποθετούμε στο αρχείο ρύθμισης του κελύφους που χρησιμοποιούμε (bash -> ~/.bashrc, zsh -> ~/.zshrc, etc).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bibliography -->
+    <div class="portfolio-modal modal fade" id="ieeetran" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body" style="text-align: left">
+                                <p style="font-size: 1.4em">IEEEtran</p>
+                                <p id="side-note"><a href="https://ieeexplore.ieee.org/ielaam/2945/8089786/7775115-aam.pdf">How to Use the IEEEtran LATEX Class</a></p>
+                                <p id="code">\documentclass[10pt,journal,compsoc]{IEEEtran}
+
+                                    \usepackage[english, greek]{babel}
+                                    \usepackage[nocompress]{cite}
+                                    \usepackage[pdftex]{graphicx}
+                                    
+                                    \newcommand{\en}{\selectlanguage{english}}
+                                    \newcommand{\gr}{\selectlanguage{greek}}
+                                    
+                                    \title{Επίδειξη χρήσης του \textlatin{IEEEtran} για συγγραφή ερευνητικής εργασίας}
+                                    
+                                    \author{
+                                      Δημήτριος~Τζήκας~\IEEEmembership{\textlatin{IEEE~Member}}
+                                      \IEEEcompsocitemizethanks{
+                                        \IEEEcompsocthanksitem Εδώ μπορούμε να βάλουμε άτομα που βοηθήσαν.
+                                      }
+                                      \thanks{Και άλλες ευχαριστίες.}
+                                    }
+                                    
+                                    \markboth{\textgreek{Χρήση του \LaTeX~ και του πακέτου \textlatin{IEEEtran}, 21 Φεβρουαρίου 2020}}{\LaTeX}
+                                    
+                                    \IEEEtitleabstractindextext{
+                                      \begin{abstract}
+                                        Εδώ γράφουμε μια σύντομη περίληψη για την εργασία μας.
+                                      \end{abstract}
+                                      \begin{IEEEkeywords}
+                                        Ερευνητική εργασία,\LaTeX, \textlatin{IEEEtran}
+                                      \end{IEEEkeywords}
+                                    }
+                                    
+                                    \begin{document}
+                                    \maketitle
+                                    
+                                    \IEEEdisplaynontitleabstractindextext
+                                    
+                                    \IEEEpeerreviewmaketitle
+                                    
+                                    \IEEEraisesectionheading{
+                                      \section{Εισαγωγή}
+                                      \label{sec:introduction}
+                                    }
+                                    
+                                    \IEEEPARstart{Γ}{ια} να χρησιμοποιήσουμε το πρότυπο του \textlatin{IEEE} θα πρέπει να χρησιμοποιήσουμε
+                                    το πακέτο \textlatin{IEEEtran}. Στη περίπτωση που δεν έχει γίνει η εγκατάσταση του πακέτου
+                                    στα αρχεία του \LaTeX~θα πρέπει να δηλωθεί η θέση του πακέτου χειροκίνητα.
+                                    
+                                    \hfill 21 Φεβρουαρίου, 2020
+                                    
+                                    \subsection{Υποενότητα}
+                                    Αυτό το κείμενο ανήκει στην υποενότητα.
+                                    
+                                    \subsubsection{Υπο-υποενότητα}
+                                    Αυτό το κείμενο ανήκει στην υπο-υποενότητα.
+                                    
+                                    
+                                    \section{Συμπέρασμα}
+                                    Συμπεράσματα της ερευνητικής εργασίας.
+                                    
+                                    \en\appendices\gr
+                                    \section{Τίτλος παραρτήματος}
+                                    Κείμενο παραρτήματος.
+                                    \section{}
+                                    Αυτό το παράρτημα δεν έχει τίτλο.
+                                    
+                                    
+                                    \section*{\textlatin{Acknowledgments}}
+                                    Ευχαριστίες από τον συγγραφέα.
+                                    
+                                    \newpage
+                                    
+                                    \begin{thebibliography}{1}
+                                    
+                                    \bibitem{IEEEhowto:kopka}
+                                      \textlatin{Shell, Michael. "How to use the IEEEtran LATEX class." Journal of LaTeX class files 12.4 (2002): 100-120.
+                                      H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+                                      0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.}
+                                    
+                                    \end{thebibliography}
+                                    
+                                    \begin{IEEEbiography}{Δημήτριος Τζήκας}
+                                      Κείμενο βιβλιογραφίας.
+                                    \end{IEEEbiography}
+                                    
+                                    \begin{IEEEbiographynophoto}{Δημήτριος Τζήκας}
+                                      Κείμενο βιβλιογραφίας.
+                                    \end{IEEEbiographynophoto}
+                                    
+                                    \end{document}
+                                </p>
                             </div>
                         </div>
                     </div>
