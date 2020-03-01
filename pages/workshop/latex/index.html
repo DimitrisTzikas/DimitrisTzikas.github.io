@@ -453,6 +453,10 @@
                                     Γεια σου κόσμε!
                                     \end{document}
                                 </p>
+                                <p id="side-note">Μπορούμε να δημιουργήσουμε πιο μικρές εντολές:
+                                    \newcommand{\en}{\selectlanguage{english}}
+                                    \newcommand{\gr}{\selectlanguage{greek}}
+                                </p>
                                 <p>Αξίζει να σημειωθεί πως και το παρακάτω παράδειγμα θα μετατραπεί χωρίς κάποιο πρόβλημα.</p>
                                 <p id="code">\documentclass{article}
                                     \usepackage[<span id="emphasis">english,greek</span>]{babel}
@@ -832,6 +836,57 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body" style="text-align: left">
                                 <p style="font-size: 1.4em">Βιβλιογραφία</p>
+                                <p>Η βιβλιογραφία και βιβλιογραφικές παραπομπές είναι σημαντικές, γιαυτό θα δούμε πως μπορούμε να δημιουργήσουμε τη βιβλιογραφία στο LaTeX και πως μπορούμε να κάνουμε παραπομπές σε αυτή.</p>
+                                <p style="font-size: 1.2em">Δημιουργία της βιβλιογραφίας</p>
+                                <p id="code">\begin{thebibliography}{9}
+
+                                    \bibitem{tag}
+                                      Όνομα Επώνυμο
+                                      Τίτλος Βιβλίου και άλλα στοιχεία
+                                    
+                                    \bibitem{tag2}
+                                      Όνομα2 Επώνυμο2
+                                      Τίτλος Βιβλίου2 και άλλα στοιχεία
+                                      
+                                    \end{thebibliography}
+                                </p>
+                                <img id="border" src="img/pdfs/bibliography-1.png" alt="latex-document">
+                                <p>Δηλώνουμε το περιβάλλον thebibliography και μέσα σε αυτό μπορούμε να χρησιμοποιήσουμε τη δήλωση \bibitem{tag} για να εισάγουμε μια βιβλιογραφική αναφορά. Αν προσέξουμε στη δήλωση του περιβάλλοντος, μπορούμε να δούμε πως έχουμε βάλει έναν αριθμό, το 9. Αυτό σημαίνει πως οι βιβλιογραφικές μας αναφορές θα έχουν μονοψήφιο πληθικό αριθμό (1-9), αν έχουμε περισσότερες βιβλιογραφικές αναφορές θα πρέπει να δηλώσουμε τον εκάστοτε αριθμό. Για παράδειγμα αν έχουμε 22 βιβλιογραφικές αναφορές θα βάλουμε τον αριθμό {99} ή όποιον διψήφιο αριθμό θέλετε.</p>
+                                <p>Για αναφορά σε κάποιο βιβλιογραφικό στοιχείο που έχουμε εισάγει, χρησιμοποιούμε την εντολή \cite{} με την ετικέτα του βιβλιογραφικού στοιχείου.</p>
+                                <p id="code">Το βιβλίο Τίτλος Βιβλίου <span id="emphasis">\cite{tag}</span> είναι πολύ ωραίο.
+                                    Το βιβλίο Τίτλος Βιβλίου2 <span id="emphasis">\cite{tag2}</span> δε μου άρεσε τόσο.
+                                </p>
+                                <img id="border" src="img/pdfs/bibliography-2.png" alt="latex-document">
+                                <p style="font-size: 1.2em">Εισαγωγή βιβλιογραφικών στοιχείων από αρχείο bib</p>
+                                <p>Σίγουρα το να γράφουμε όλες τις βιβλιογραφικές αναφορές δεν είναι πολύ αποδοτικό, γιαυτό θα δούμε πως να κάνουμε μια βιβλιογραφική αναφορά από αρχεία bib. Για παράδειγμα σας προτείνω το βιβλίο LaTeX beginner's guide, που είναι ένα πολύ ωραίο βιβλίο για το LaTeX. Για να κάνω αναφορά σε αυτό, θα πάω στο Google Scholar και θα αναζητήσω το βιβλίο.</p>
+                                <img id="border" src="img/pdfs/bibliography-3.png" alt="google-scholar">
+                                <p>Θα πατήσω στα διπλά εισαγωγικά και θα επιλέξω το BibTex.</p>
+                                <img id="border" src="img/pdfs/bibliography-4.png" alt="google-scholar">
+                                <p>Τέλος, θα αντιγράψω το κείμενο και θα το τοποθετήσω σε ένα αρχείο, για παράδειγμα bibliography.bib</p>
+                                <p id="code">@book{kottwitz2011latex,
+                                    title={LaTeX beginner's guide},
+                                    author={Kottwitz, Stefan},
+                                    year={2011},
+                                    publisher={Packt Publishing Ltd}
+                                    }
+                                </p>
+                                <p>Τώρα είναι το περίεργο κομμάτι, πρέπει να δηλώσουμε πρώτα το στυλ της βιβλιογραφίας και κατόπιν το αρχείο ή τα αρχεία που έχουμε.</p>
+                                <p id="code">\documentclass{article}
+
+                                    \usepackage[english,greek]{babel}
+                                    
+                                    \begin{document}
+                                    
+                                    Το βιβλίο \textlatin{\LaTeX beginner's guide}\cite{kottwitz2011latex} είναι πολύ καλό για άτομα που χρησιμοποιούν το \LaTeX για πρώτη φορά.
+                                    
+                                    \selectlanguage{english}
+                                    \bibliographystyle{plain}
+                                    \bibliography{bibliography.bib}
+                                                                        
+                                    \end{document}
+                                </p>
+                                <img id="border" src="img/pdfs/bibliography-5.png" alt="google-scholar">
+                                <p>Για να γίνει σωστά η μεταγλώττιση πρέπει να μεταγλωττίσουμε μια φορά το αρχείο με το pdflatex, μετά με το bibtex και τέλος δύο φορές με το pdflatex. Ο λόγος που το κάνουμε αυτό είναι γιατί πρώτα πρέπει το pdflatex να δημιουργήσει το αρχείο aux, για να ξέρει το bibtex ποια αρχεία έχουν τη βιβλιογραφία, έτσι όταν το εκτελέσουμε, να πάρει τις πληροφορίες που θέλει και τέλος κάνουμε κανονικά τη διπλή εκτέλεση του pdflatex, την πρώτη φορά για να δημιουργήσει το αρχείο και τη δεύτερη για να δημιουργήσει τις αναφορές. Για να δουλέψει σωστά το bibtex θα πρέπει να έχουμε τρία πράγματα, ένα αρχείο βιβλιογραφίας, τουλάχιστον μια αναφορά και να ορίσουμε το στυλ, διαφορετικά δεν θα εκτελεστεί με επιτυχία.</p>
                             </div>
                         </div>
                     </div>
