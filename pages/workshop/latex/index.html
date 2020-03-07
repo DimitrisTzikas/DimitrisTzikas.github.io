@@ -1239,7 +1239,7 @@
         </div>
     </div>
 
-    <!-- Bibliography -->
+    <!-- Packages -->
     <div class="portfolio-modal modal fade" id="packages" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1271,7 +1271,7 @@
         </div>
     </div>
 
-    <!-- Bibliography -->
+    <!-- IEEEtran -->
     <div class="portfolio-modal modal fade" id="ieeetran" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1286,7 +1286,68 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body" style="text-align: left">
                                 <p style="font-size: 1.4em">IEEEtran</p>
-                                <p id="side-note"><a href="https://ieeexplore.ieee.org/ielaam/2945/8089786/7775115-aam.pdf">How to Use the IEEEtran LATEX Class</a></p>
+                                <p>Για να χρησιμοποιήσουμε το πρότυπο του IEEE θα πρέπει να χρησιμοποιήσουμε το πακέτο IEEEtran. Στην περίπτωση που δεν έχει γίνει η εγκατάσταση του πακέτου στα αρχεία του LaTeX θα πρέπει να δηλωθεί η θέση του πακέτου χειροκίνητα (\documentclass[10pt, journal]{../sty/IEEEtran}).</p>
+                                <p>Το πακέτο IEEEtran προσφέρει διαφορετικές παραλλαγές του προτύπου, εμείς θα χρησιμοποιήσουμε το compsoc που είναι για το computer society. Για να δηλώσουμε στο LaTeX πως θέλουμε να χρησιμοποιήσουμε το IEEEtran με το compsoc, πρέπει να το δηλώσουμε ως όρισμα στη δήλωση του πακέτου.</p>
+                                <p id="code">\documentclass[10pt,journal,<span id="emphasis">sompsoc</span>]{IEEEtran}</p>
+                                <p id="side-note">Το IEEEtran δεν δημιουργήθηκε με σκεπτικό τα πολυγλωσσικά κείμενα, αυτό πάει να πει πως υπάρχουν κάποια μικροπροβλήματα, όμως δεν είναι τόσο αρνητικό γιατί λογικά αν χρησιμοποιείται αυτό το πακέτο, το κείμενο σας θα είναι αγγλικό.</p>
+                                <p>Εισάγουμε τα παρακάτω πακέτα και δημιουργούμε τις δύο εντολές για συντόμευση των αρχικών εντολών αλλαγής γλώσσας (Για να δείτε προτεινόμενα πακέτα διαβάστε την <a href="https://ieeexplore.ieee.org/ielaam/2945/8089786/7775115-aam.pdf">τεκμηρίωση</a> του πακέτου IEEEtran).</p>
+                                <p id="code">\usepackage[english, greek]{babel}
+                                    \usepackage[nocompress]{cite}
+                                    \usepackage[pdftex]{graphicx}
+                                    
+                                    \newcommand{\en}{\selectlanguage{english}}
+                                    \newcommand{\gr}{\selectlanguage{greek}}
+                                </p>
+                                <p>Μπορούμε να προσθέσουμε στη δήλωση του συγγραφέα το όνομα που έχουμε ως μέλος του IEEE και διάφορες ευχαριστίες.</p>
+                                <p id="code">\title{Επίδειξη χρήσης του \textlatin{IEEEtran} για συγγραφή ερευνητικής εργασίας}
+
+                                    \author{
+                                      Δημήτριος~Τζήκας~\IEEEmembership{\textlatin{IEEE~Member}}
+                                      \IEEEcompsocitemizethanks{
+                                        \IEEEcompsocthanksitem Εδώ μπορούμε να βάλουμε άτομα που βοηθήσαν.
+                                      }
+                                      \thanks{Και άλλες ευχαριστίες.}
+                                    }
+                                </p>
+                                <p id="side-note">Καλό είναι να κάνουμε χρήση του χαρακτήρα ~ και όχι του κενού διαστήματος, καθώς προκαλεί προβλήματα.</p>
+                                <img id="border" src="img/pdfs/ieeetran1.png" alt="ieee-tran">
+                                <img id="border" src="img/pdfs/ieeetran2.png" alt="ieee-tran">
+                                <p>Με την εντολή markboth μπορούμε να γράψουμε μια μικρή πρόταση όπου θα τοποθετηθεί στο πάνω αριστερό μέρος κάθε σελίδας.</p>
+                                <p id="code">\markboth{\textgreek{Χρήση του \LaTeX~ και του πακέτου \textlatin{IEEEtran}, 21 Φεβρουαρίου 2020}}{\LaTeX}</p>
+                                <img id="border" src="img/pdfs/ieeetran3.png" alt="ieee-tran">
+                                <p>Η εντολή IEEEtitleabstractindextext τοποθετεί το περιεχόμενο της μαζί με την επικεφαλίδα.</p>
+                                <p id="code">\IEEEtitleabstractindextext{
+                                    \en
+                                    \begin{abstract}
+                                      \textgreek{Εδώ γράφουμε μια σύντομη περίληψη για την εργασία μας.}
+                                    \end{abstract}
+                                    \begin{IEEEkeywords}
+                                      \textgreek{Ερευνητική εργασία},\LaTeX, IEEEtran
+                                    \end{IEEEkeywords}
+                                    \gr
+                                  }
+                                </p>
+                                <img id="border" src="img/pdfs/ieeetran4.png" alt="ieee-tran">
+                                <p>Μέσα στο κείμενο θα πρέπει να τοποθετήσουμε τις εντολές \IEEEdisplaynontitleabstractindextext και \IEEEpeerreviewmaketitle για να εμφανιστεί η επικεφαλίδα και η περίληψη μαζί με τους όρους ευρετηρίου.</p>
+                                <p>Μπορούμε να τροποποιήσουμε την εμφάνιση του κειμένου χρησιμοποιώντας τις εντολές IEEEPARstart και IEEEraisesectionheading.</p>
+                                <p id="code">\IEEEraisesectionheading{
+                                    \section{Εισαγωγή}
+                                    \label{sec:introduction}
+                                  }
+                                  
+                                  \IEEEPARstart{Γ}{ια} να χρησιμοποιήσουμε το πρότυπο του \textlatin{IEEE} θα πρέπει να χρησιμοποιήσουμε
+                                  το πακέτο \textlatin{IEEEtran}. Στη περίπτωση που δεν έχει γίνει η εγκατάσταση του πακέτου
+                                  στα αρχεία του \LaTeX~θα πρέπει να δηλωθεί η θέση του πακέτου χειροκίνητα.
+                                  
+                                  \hfill 21 Φεβρουαρίου, 2020
+                                </p>
+                                <img id="border" src="img/pdfs/ieeetran5.png" alt="ieee-tran">
+                                <p>Τέλος, μπορούμε να χρησιμοποιήσουμε το περιβάλλον IEEEbiographynophoto για να γράψουμε ένα μικρό βιογραφικό για τον εαυτό μας.</p>
+                                <p id="code">\begin{IEEEbiographynophoto}{Δημήτριος Τζήκας}
+                                    Κείμενο βιβλιογραφίας.
+                                  \end{IEEEbiographynophoto}
+                                </p>
+                                <p style="font-size: 1.2em">Ολόκληρο το έγγραφο</p>
                                 <p id="code">\documentclass[10pt,journal,compsoc]{IEEEtran}
 
                                     \usepackage[english, greek]{babel}
@@ -1309,12 +1370,14 @@
                                     \markboth{\textgreek{Χρήση του \LaTeX~ και του πακέτου \textlatin{IEEEtran}, 21 Φεβρουαρίου 2020}}{\LaTeX}
                                     
                                     \IEEEtitleabstractindextext{
+                                      \en
                                       \begin{abstract}
-                                        Εδώ γράφουμε μια σύντομη περίληψη για την εργασία μας.
+                                        \textgreek{Εδώ γράφουμε μια σύντομη περίληψη για την εργασία μας.}
                                       \end{abstract}
                                       \begin{IEEEkeywords}
-                                        Ερευνητική εργασία,\LaTeX, \textlatin{IEEEtran}
+                                        \textgreek{Ερευνητική εργασία},\LaTeX, IEEEtran
                                       \end{IEEEkeywords}
+                                      \gr
                                     }
                                     
                                     \begin{document}
@@ -1351,7 +1414,6 @@
                                     \section{}
                                     Αυτό το παράρτημα δεν έχει τίτλο.
                                     
-                                    
                                     \section*{\textlatin{Acknowledgments}}
                                     Ευχαριστίες από τον συγγραφέα.
                                     
@@ -1366,16 +1428,13 @@
                                     
                                     \end{thebibliography}
                                     
-                                    \begin{IEEEbiography}{Δημήτριος Τζήκας}
-                                      Κείμενο βιβλιογραφίας.
-                                    \end{IEEEbiography}
-                                    
                                     \begin{IEEEbiographynophoto}{Δημήτριος Τζήκας}
                                       Κείμενο βιβλιογραφίας.
                                     \end{IEEEbiographynophoto}
                                     
                                     \end{document}
                                 </p>
+                                <img id="border" src="img/pdfs/ieeetran6.png" alt="ieee-tran">
                             </div>
                         </div>
                     </div>
