@@ -897,3 +897,54 @@ body {
   text-align: left;
   inline-size: 300px;
 }
+
+#presentations div div div div{
+  background-color: #222222;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+  width:400px;
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+}
+
+#presentations div div div div a{
+  text-decoration: none;
+  color: #AB8561;
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+}
+
+#presentations div div div div a:hover{
+  text-decoration: none;
+  color: #222222;
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+}
+
+#presentations div div div div:hover{
+  background-color: #AB8561;
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+}
+
+#presentations div div div div img{
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+}
+
+#presentations div div div div img:hover{
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition: all ease 1s;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+}
+
