@@ -527,22 +527,251 @@
 						<img style="float: right;" src="../workshop/latex/img/pdfs/table-example-5.png" width="600" alt="">
 					</section>
 				</section>
-
+				
 				<section data-background="../workshop/latex/img/presentations/background.jpg">
 					<section>
 						<p style="font-size: 1.2em;">Δημιουργία διαγραμμάτων</p>
+						<p>Η δημιουργία διαγραμμάτων είναι αρκετά εύκολη, τουλάχιστον για απλά διαγράμματα. Για να μπορέσουμε να ορίσουμε το διάγραμμα μας, θα πρέπει πρώτα να δηλώσουμε το περιβάλλον tikzpicture και μέσα σε αυτό το περιβάλλον axis, κατόπιν το μόνο που έχουμε να κάνουμε είναι να χρησιμοποιήσουμε τη δήλωση \addplot για να δημιουργήσουμε το διάγραμμα μας.</p>
+					</section>
+					<section>
+						<p id="code">
+							...
+							\usepackage{pgfplots}
+							...
+							\begin{tikzpicture}
+                            \begin{axis}[]
+                            \addplot[ domain=0:3, samples=10 ]{x};
+                            \end{axis}
+                            \end{tikzpicture}
+							...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/plot-1.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Όταν βάζουμε μεγάλο δείγμα ο υπολογιστής θα χρειαστεί περισσότερη ώρα για να υπολογίσει το αποτέλεσμα, οπότε θα πρέπει να μη δηλώνουμε πολύ μεγάλα ποσά καθώς αν έχουμε πολλά διαγράμματα θα καθυστερεί πολύ.</p>
+					</section>
+					<section>
+						<p id="code">
+							...
+                            \begin{axis}[]
+                            \addplot[ domain=0:3, samples=10 ]{x};
+                            \addplot[ red, domain=0:3, samples=10 ]{x^2};
+                            \addplot[ green, domain=0:3, samples=10 ]{x^3};
+                            \addplot[ blue, domain=0:3, samples=10 ]{x^4};
+                            \end{axis}
+                            ...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/plot-2.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Δημιουργία διαγραμμάτων με csv</p>
+						<p id="code">
+							...
+                            \begin{axis}[]
+                            \addplot table [x=a, y=b, col sep=comma] {data.csv};
+                            \addplot table [x=a, y=b, col sep=comma] {data2.csv};
+                            \end{axis}
+                            ...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/plot-3.png" height="600" alt="">
 					</section>
 				</section>
-
+				
 				<section data-background="../workshop/latex/img/presentations/background.jpg">
 					<section>
 						<p style="font-size: 1.2em;">Παρουσιάσεις</p>
+						<p>Για να δημιουργήσουμε την πρώτη μας παρουσίαση θα χρησιμοποιήσουμε το πακέτο beamer, για να το κάνουμε αυτό πρέπει να δηλώσουμε τον τύπο του εγγράφου ως beamer.</p>
+					</section>
+					<section>
+						<p id="code">
+							\documentclass{beamer}
+
+                            \begin{document}
+                                    
+                            My first presentation with {\LaTeX}
+                                    
+                            \end{document}
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation1.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Για να δημιουργήσουμε την πρώτη διαφάνεια όπου θα έχει τον τίτλο της παρουσίασης, το όνομα μας, etc, μπορούμε να χρησιμοποιήσουμε τις δηλώσεις που χρησιμοποιούσαμε μέχρι στιγμής.</p>
+					</section>
+					<section>
+						<p id="code">
+							\documentclass{beamer}
+
+                            \title{{\LaTeX} presentation}
+                            \author{Dimitris Tzikas}
+                            \date{\today}
+                                    
+                        	\begin{document}
+                        	\maketitle
+                                    
+                            \end{document}
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation2.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Ορολογίες</p>
+						<ul>
+							<li>Frame: δηλώνει το περιεχόμενο</li>
+							<li>Διαφάνεια: είναι σελίδα στη παρουσίαση μας</li>
+						</ul>
+					</section>
+					<section>
+						<p id="code">
+							...
+							\begin{frame}
+                            \begin{itemize}
+                            \item One
+                            \item Two
+                            \item Three
+                            \end{itemize}
+							\end{frame}
+							...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation3.png" height="600" alt="">
+					</section>
+					<section>
+						<p id="code">
+							...
+							\begin{frame}
+                            \begin{itemize}
+                            \item One \pause
+                            \item Two \pause
+                            \item Three
+                            \end{itemize}
+							\end{frame}
+							...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation4-1.png" height="600" alt="">
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation4-2.png" height="600" alt="">
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation4-3.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Θέματα</p>
+						<p id="code">
+							\documentclass{beamer}
+
+                            \usetheme{PaloAlto}
+                                    
+                            \title{{\LaTeX} presentation}
+                            ...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation5.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Για να ορίσουμε το δικό μας χρώμα χρησιμοποιούμε τις παρακάτω εντολές.</p>
+						<p id="code">
+							\usetheme{PaloAlto}
+                            \definecolor{color-name}{rgb}{.0,.31,.67}
+                            \usecolortheme[named=color-name]{structure}
+						</p>
+					</section>
+					<section>
+						<p>Ορισμός τίτλου και υπότιτλου.</p>
+						<p id="code">
+							...
+                            <span style="color: rgb(255, 230, 0);">\begin{frame}
+                            \frametitle{Title}</span>
+                            \framesubtitle{Subtitle}
+                            \begin{itemize}
+                            \item One
+                            \item Two
+                        	...
+						</p>
+					</section>
+					<section>
+						<p id="code">
+							...
+                            <span style="color: rgb(255, 230, 0);"></span>\begin{frame}{Title}{Subtitle}</span>
+                            \begin{itemize}
+                            \item One
+                            \item Two
+                            \item Three
+                            \end{itemize}
+                            \end{frame}
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation6.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Επίσης, μπορούμε να δηλώσουμε τις ενότητες που έχει η παρουσίαση μας.</p>
+						<p id="code">
+							...
+							\section{Section 1}
+							...
+							\section{Section 2}
+							...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation7-1.png" height="600" alt="">
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation7-2.png" height="600" alt="">
+					</section>
+					<section>
+						<p>Columns</p>
+						<p id="code">
+							...
+                            \begin{frame}
+                            \begin{columns}
+                            \column{.5\textwidth}
+                            Column1
+                            \column{.5\textwidth}
+                            Column2
+                            \end{columns}
+                            \end{frame}
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/latex-presentation8.png" height="600" alt="">
 					</section>
 				</section>
 
 				<section data-background="../workshop/latex/img/presentations/background.jpg">
 					<section>
 						<p style="font-size: 1.2em;">Πακέτα</p>
+						<p>Οι χρήστες του MiKTeX στα Windows και του MacTeX στο macOS, δεν χρειάζεται να κάνουν τίποτα καθώς τα πακέτα θα εγκατασταθούν αυτόματα.</p>
+					</section>
+					<section>
+						<p>Οι χρήστες που χρησιμοποιούν pdflatex ή κάποια παρόμοια έκδοση, θα χρειαστεί να κατεβάσουν τα πακέτα μέσω κάποιου άλλου προγράμματος. Ένα πρόγραμμα που βοηθάει να κατεβάσουμε τα πακέτα είναι το tlmgr.</p>
+					</section>
+					<section>
+						<p>Εγκατάσταση του πακέτου pythonhighlight</p>
+						<p id="code">
+							tlmgr install pythonhighlight
+                            sudo texhash
+						</p>
+					</section>
+					<section>
+						<p>Επίσης για την απλοποίηση αυτής της διαδικασίας μπορούμε να κάνουμε ένα ψευδώνυμο.</p>
+						<p id="code">
+							alias texpackage='texpackage(){tlmgr install $1 && sudo texhash}; texpackage'
+						</p>
 					</section>
 				</section>
 
@@ -550,6 +779,9 @@
 					<section>
 						<p style="font-size: 1.2em;">IEEE Template</p>
 					</section>
+				</section>
+
+				<section data-background="../workshop/latex/img/thanks.jpg">
 				</section>
 				
 			</div>
