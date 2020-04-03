@@ -24,7 +24,7 @@
 
 		<style>
 			img{
-				border-radius: 25px;
+				border-radius: 35px;
 			}
 
 			#code{
@@ -778,10 +778,112 @@
 				<section data-background="../workshop/latex/img/presentations/background.jpg">
 					<section>
 						<p style="font-size: 1.2em;">IEEE Template</p>
+						<ul>
+							<li class="fragment">IEEEtran</li>
+							<li class="fragment">compsoc: computer society</li>
+							<li class="fragment">\documentclass[
+								<span class="fragment">10pt</span>,
+								<span class="fragment">journal</span>,
+								<span class="fragment">sompsoc</span>]{
+								<span class="fragment">IEEEtran</span>}
+							</li>
+						</ul>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/ieeetran6.png" height="600" alt="">
+					</section>
+					<section>
+						<p id="code">
+							...
+							\usepackage[english, greek]{babel}
+							\usepackage[nocompress]{cite}
+                            \usepackage[pdftex]{graphicx}
+                                    
+                            \newcommand{\en}{\selectlanguage{english}}
+							\newcommand{\gr}{\selectlanguage{greek}}
+							...
+						</p>
+					</section>
+					<section>
+						<p id="code">
+							...
+							\title{Επίδειξη χρήσης του \textlatin{IEEEtran} για συγγραφή ερευνητικής εργασίας}
+                            \author{Δημήτριος~Τζήκας~\IEEEmembership{\textlatin{IEEE~Member}}
+                            \IEEEcompsocitemizethanks{
+                            \IEEEcompsocthanksitem Εδώ μπορούμε να βάλουμε άτομα που βοηθήσαν.
+                            }
+                            \thanks{Και άλλες ευχαριστίες.}
+							}
+							...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/ieeetran1.png" alt="">
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/ieeetran2.png" alt="">
+					</section>
+					<section>
+						<p id="code">\markboth{\textgreek{Χρήση του \LaTeX~ και του πακέτου \textlatin{IEEEtran}, 21 Φεβρουαρίου 2020}}{\LaTeX}</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/ieeetran3.png" alt="">
+					</section>
+					<section>
+						<p id="code">
+							...
+							\IEEEtitleabstractindextext{
+							\en
+							\begin{abstract}
+							\textgreek{Εδώ γράφουμε μια σύντομη περίληψη για την εργασία μας.}
+							\end{abstract}
+							\begin{IEEEkeywords}
+							\textgreek{Ερευνητική εργασία},\LaTeX, IEEEtran
+							\end{IEEEkeywords}
+							}
+							...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/ieeetran4.png" alt="">
+					</section>
+					<section>
+						<p id="code">
+							...
+							\IEEEraisesectionheading{
+							\section{Εισαγωγή}
+							\label{sec:introduction}
+							}
+							...
+						</p>
+					</section>
+					<section>
+						<p id="code">
+							...
+							\IEEEPARstart{Γ}{ια} να χρησιμοποιήσουμε το πρότυπο του \textlatin{IEEE} θα πρέπει να χρησιμοποιήσουμε
+                            το πακέτο \textlatin{IEEEtran}. Στη περίπτωση που δεν έχει γίνει η εγκατάσταση του πακέτου
+                            στα αρχεία του \LaTeX~θα πρέπει να δηλωθεί η θέση του πακέτου χειροκίνητα.
+                                  
+                            \hfill 21 Φεβρουαρίου, 2020
+							...
+						</p>
+					</section>
+					<section>
+						<img src="../workshop/latex/img/pdfs/ieeetran5.png" alt="">
+					</section>
+					<section>
+						<p id="code">
+							...
+							\begin{IEEEbiographynophoto}{Δημήτριος Τζήκας}
+                            Κείμενο βιβλιογραφίας.
+							\end{IEEEbiographynophoto}
+							...
+						</p>
 					</section>
 				</section>
 
 				<section data-background="../workshop/latex/img/thanks.jpg">
+					<p style="font-size: 1.4em; color: #AB8561; font-weight: bold;">Ευχαριστώ για την προσοχή σας</p>
 				</section>
 				
 			</div>
