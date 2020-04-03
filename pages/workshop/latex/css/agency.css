@@ -948,3 +948,17 @@ body {
   -moz-transition: all ease 1s;
 }
 
+#more div div div div ul{
+  text-align-last: left;
+  font-size: 1.4em;
+  width: max-content;
+  margin: 0 auto;
+}
+
+#more div div div div ul li a{
+  text-decoration: none;
+}
+
+#more div div div div ul li a:hover{
+  color: #222222;
+}

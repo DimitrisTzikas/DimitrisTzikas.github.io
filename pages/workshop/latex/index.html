@@ -51,6 +51,9 @@
                     <li>
                         <a class="page-scroll" href="#pdfs">Θεματα</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#more">Δειτε επισης</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -292,38 +295,44 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 pdfs-item">
-                    <a href="#more" class="pdfs-link" data-toggle="modal">
+                    <a href="#emacs" class="pdfs-link" data-toggle="modal">
                         <div class="pdfs-hover">
                             <div class="pdfs-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/pdfs/more.jpg" class="img-responsive" alt="">
+                        <img src="img/pdfs/emacs.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="pdfs-caption">
-                        <h4>Δείτε επίσης</h4>
-                        <p class="text-muted">Ιστοσελίδες</p>
+                        <h4>Emacs</h4>
+                        <p class="text-muted">Emacs & LaTeX</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Presentations Section -->
+    <section id="more" class="bg-dark-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div>
+                        <h2 class="section-heading">Δειτε επισης</h2>
+                        <ul>
+                            <li><a href="https://www.latex-tutorial.com/tutorials/">A simple guide to LaTeX - Step by Step</a></li>
+                            <li><a href="https://ctan.org/">The Comprehensive TeX Archive Network</a></li>
+                            <li><a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX - wikibooks</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--
+    Panels
+-->
 
     <!-- Introduction -->
      <div class="portfolio-modal modal fade" id="introduction" tabindex="-1" role="dialog" aria-hidden="true">
@@ -1444,7 +1453,7 @@
     </div>
 
     <!-- More -->
-    <div class="portfolio-modal modal fade" id="more" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="emacs" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -1457,12 +1466,29 @@
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body" style="text-align: left">
-                                <p style="font-size: 1.4em">Δείτε επίσης</p>
-                                <ul>
-                                    <li><a href="https://ctan.org/">The Comprehensive TeX Archive Network</a></li>
-                                    <li><a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX - wikibooks</a></li>
-                                    <li><a href="https://www.latex-tutorial.com/tutorials/">A simple guide to LaTeX - Step by Step</a></li>
-                                </ul>
+                                <p style="font-size: 1.4em">Emacs</p>
+                                <p>Αν είστε χρήστης του Emacs μπορείτε να χρησιμοποιήσετε το πακέτο <a href="https://www.emacswiki.org/emacs/AUCTeX">AUCTeX</a>.</p>
+                                <p style="font-size: 1.2em;">Ρυθμίσεις</p>
+                                <p id="code">
+                                    ;;;;;;;;;;;;;;;;;;;;;;;;;;;; LaTeX ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                    (defun latex-compile ()
+                                    (interactive)
+                                    (save-buffer)
+                                    (TeX-command "LaTeX" 'TeX-master-file))
+                                    (setq TeX-view-program-selection '((output-pdf "Zathura")))
+                                    (setq TeX-auto-save t)
+                                    (setq TeX-parse-self t)
+                                    (setq reftex-plug-into-AUCTeX t)
+                                    (setq-default TeX-master nil)
+                                    (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+                                    (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+                                    (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+                                    (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+                                    (TeX-global-PDF-mode t)
+                                    (eval-after-load 'latex
+                                    '(define-key LaTeX-mode-map (kbd "C-c C-x") 'latex-compile))
+                                    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1470,19 +1496,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- jQuery -->
     <script src="../../../vendor/jquery/jquery.min.js"></script>
