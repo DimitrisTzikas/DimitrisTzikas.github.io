@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<base href="../reveal/">
+
+		<title>Ασφάλεια Λειτουργικών Συστημάτων</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="presentations/selinux/background.jpeg">
+					<section>
+						<p style="font-size: 1.4em; background-color: rgba(0, 0, 0, 0.8);">Ασφάλεια Λειτουργικών Συστημάτων</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);"> Είναι σημαντική η ασφάλεια στα λειτουργικά συστήματα;</p>
+						<p class="fragment">Ναι</p>
+					</section>
+					<section>
+						Σύμφωνα με έρευνα του NIST, από το 1999 έως το 2019 τα προϊόντα λογισμικού με τις περισσότερες ευπάθειες είναι λειτουργικά συστήματα.
+					</section>
+					<section>
+						Το 2017 ο ιός WannaCry μόλυνε περισσότερα από 200.000 λειτουργικά συστήματα.
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Για ποιο λόγο υπάρχουν τόσες ευπάθειες;</p>
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">Η δημιουργία λογισμικού χωρίς αδυναμίες είναι δύσκολη.</li>
+							<li class="fragment">Τα προγράμματα έχουν πρόσβαση σε πόρους του συστήματος που δεν χρειάζονται.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">SELinux</p>
+						<p class="fragment">Είναι ένα άρθρωμα και προσφέρει επιπλέον μηχανισμούς για τον έλεγχο πρόσβασης στους πόρους του συστήματος.</p>
+					</section>
+					<section>
+						<p>Επιτακτικός έλεγχος πρόσβασης</p>
+						<ul>
+							<li class="fragment">Αντικείμενα</li>
+							<li class="fragment">Πολιτικές</li>
+							<li class="fragment">Μηχανισμό ελέγχου</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Αντικείμενα</p>
+						<ul>
+							<li class="fragment">SELinux:user</li>
+							<li class="fragment">SELinux:role</li>
+							<li class="fragment">SELinux:type</li>
+						</ul>
+					</section>
+					<section>
+						<img src="presentations/selinux/dog.png" alt="dog">
+						<p> : : </p>
+					</section>
+					<section>
+						<img src="presentations/selinux/dog.png" alt="dog">
+						<p>animal_u :  : </p>
+					</section>
+					<section>
+						<img src="presentations/selinux/dog.png" alt="dog">
+						<p>animal_u : animal_r : </p>
+					</section>
+					<section>
+						<img src="presentations/selinux/dog.png" alt="dog">
+						<p>animal_u : animal_r : dog_t</p>
+					</section>
+					<section>
+						<img src="presentations/selinux/chow.png" alt="chow">
+						<p> : : </p>
+					</section>
+					<section>
+						<img src="presentations/selinux/chow.png" alt="chow">
+						<p>chow_u : : </p>
+					</section>
+					<section>
+						<img src="presentations/selinux/chow.png" alt="chow">
+						<p>chow_u : chow_dog_r : </p>
+					</section>
+					<section>
+						<img src="presentations/selinux/chow.png" alt="chow">
+						<p>chow_u : chow_dog_r : food_t</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Πολιτικές</p>
+					</section>
+					<section>
+						<img src="presentations/selinux/rules.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Μηχανισμό ελέγχου</p>
+					</section>
+					<section>
+						<img src="presentations/selinux/dog-eat.png" alt="dog-eat">
+					</section>
+					<section>
+						<img src="presentations/selinux/dog-eat2.png" alt="dog-eat">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Το SELinux στη καθημερινότητα</p>
+					</section>
+					<section>
+						<img src="presentations/selinux/gui.png" alt="android" height="500px">
+					</section>
+					<section>
+						<img src="presentations/selinux/tui.png" alt="android-tui">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Πλεονεκτήματα του SELinux</p>
+						<ul>
+							<li class="fragment">Η ασφάλεια εξαρτάται κυρίως από την ορθότητα του πυρήνα και της διαμόρφωσης της πολιτικής.</li>
+							<li class="fragment">Ευελιξία.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Συμπεράσματα</p>
+						<ul>
+							<li class="fragment">Προσπαθεί να ασφαλίσει το λειτουργικό σύστημα ξέροντας πως τα προγράμματα έχουν αδυναμίες.</li>
+							<li class="fragment">Δεν λύνει όλα τα προβλήματα αλλά είναι ένα καλό βήμα προς την βελτίωση της ασφάλειας των λειτουργικών συστημάτων.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Ερωτήσεις</p>
+				</section>
+
+				<section>
+					<p style="font-size: 1.2em; background-color: rgba(0, 0, 0, 0.8);">Ευχαριστώ</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
